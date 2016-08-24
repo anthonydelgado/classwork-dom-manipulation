@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trigger Clicked</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <!--Sweet Alerts-->
+    <script src="bower_components/sweetalert/dist/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
+    <style>
+        .sa-icon.sa-custom {
+            width: 100% !important;
+            height: 200px !important;
+        }
+        footer a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="container center-align">
+           <a href="#" class="brand-logo center">Sandwich Game</a>
+    </div>
+</nav>
+<div class="container">
+
+    <h1>Click to Eat Sandwich</h1>
+
+    <a class="waves-effect waves-light btn" id="pbj">Peanut Butter Jelly</a>
+
+    <a class="waves-effect waves-light btn" id="grillcheese">Grilled Cheese</a>
+
+    <a class="waves-effect waves-light btn" id="roastbeef">Roast Beef</a>
+
+</div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            // VARIABLES
+            // ====================================================================
+            // Here we create variables for tracking the number of sandwiches eaten
+            // ....
+
+            var pbjCount = 0;
+
+            var grillcheeseCount = 0;
+
+            var roastbeefCount = 0;
+
+
+
+            // ...
+
+
+            // FUNCTIONS
+            // ====================================================================
+            // Here we create various on "click" functions which capture the clicks
+            // Inside each click event is the code to create an alert, update the counter, then show the updated count.
+            // ....
+
+
+            $( "#pbj").click(function() {
+                pbjCount++;
+                swal({
+                    title: 'peanut butter and jelly',
+                    text: 'You ate ' + pbjCount + ' peanut butter and jelly sandwiches!',
+                    imageUrl: 'img/pbj.gif',
+
+                });
+            });
+            $( "#grillcheese").click(function() {
+                grillcheeseCount++;
+                swal({
+                    title: ' Grilled Cheese',
+                    text: 'You ate ' + grillcheeseCount + ' Grilled Cheese  sandwiches!',
+                    imageUrl: 'img/grilledcheese.gif',
+
+                });
+
+            });
+            $( "#roastbeef").click(function() {
+                roastbeefCount++;
+                swal({
+                    title: ' Grilled Cheese',
+                    text: 'You ate ' + roastbeefCount + ' Roast Beef  sandwiches!',
+                    imageUrl: 'img/steak.gif',
+
+                });
+
+            });
+
+
+            // ...
+
+
+
+
+        })
+
+
+
+    </script>
+
+</body>
+</html>

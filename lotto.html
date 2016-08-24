@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lotto Picker</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <!--Sweet Alerts-->
+    <script src="bower_components/sweetalert/dist/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
+    <style>
+        .sa-icon.sa-custom {
+            width: 100% !important;
+            height: 200px !important;
+        }
+        footer a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Lotto Picker</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="https://github.com/anthonydelgado">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col s12">
+        <div class="center-align">
+            <p class="center-align flow-text">
+                <a id="loto" class="waves-effect waves-light btn-large">Pick a winner!</a>
+            </p>
+        </div>
+        </div>
+
+        <div class="col s12 m6 offset-m3">
+            <ul id="listLotto" class="collection">
+                <!--<li class="collection-item">Alvin</li> -->
+            </ul>
+        </div>
+
+    </div>
+</div>
+<script>
+
+    function randomIntFromInterval(min,max)
+    {
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
+
+
+    $( "#loto").click(function() {
+        var winner = randomIntFromInterval(100000000,1000000000);
+        swal({
+            title: winner,
+            text: 'You have to play to win!',
+            imageUrl: 'img/win.gif',
+
+        });
+        $('.center-align').removeClass('active');
+        $('#listLotto').prepend('<li class="collection-item center-align active">' + winner + '</li>');
+
+    });
+</script>
+</body>
+</html>

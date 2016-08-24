@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Content!</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <style>
+        nav {
+            background: #006341;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Coffee Shop</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="https://github.com/anthonydelgado/classwork-dom-manipulation">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+
+    <h6>Select you drinks!</h6>
+<hr>
+
+<!-- Here we create a generic drinkOptions div -->
+<div id="drinkOptions"></div>
+
+</div>
+<script type="text/javascript">
+
+    var grandTotal = 0;
+
+    function addToGrandTotal(price) {
+        console.log(grandTotal);
+        grandTotal = grandTotal + price;
+        console.log(grandTotal);
+    }
+    // Array holds all of the drinks available
+//    var drinkList = [
+//        'Coffee: $5',
+//        'Espresso: $7',
+//        'Capunchino: $6',
+//        'Latte: $4',
+//        'Tea: $3',
+//        'Ice Coffee: $6',
+//        'Ice Espresso: $8',
+//        'Ice Latte: $6',
+//        'Ice Tea: $4'
+//    ];
+//
+    var drinkList = [
+        {name: "Coffee", price: 5},
+        {name: "Espresso", price: 7},
+        {name: "Capunchino", price: 6},
+        {name: "Latte", price: 4},
+        {name: "Tea", price: 3},
+        {name: "Ice Coffee", price: 6},
+        {name: "Ice Espresso", price: 8},
+        {name: "Ice Latte", price: 6},
+        {name: "Ice Tea", price: 4}
+    ];
+
+    for (var i = 0; i<drinkList.length; i++){
+        console.log(drinkList[i].name);
+        $("#drinkOptions").append("<div id='" + i + "' class='chip waves-effect'>" + drinkList[i].name + "</div>");
+    }
+
+
+//    // Create code that "grabs" the div with the matching id (#drinkOptions);
+//    // ...
+//
+////    var drinkDiv = document.getElementById("drinkOptions");
+//
+//    // ...
+//
+////    var node = document.createElement("LI");                 // Create a <li> node
+////    var textnode = document.createTextNode("Water");         // Create a text node
+////    node.appendChild(textnode);                              // Append the text to <li>
+////    document.getElementById("myList").appendChild(node);     // Append <li> to <ul> with id="myList"
+//    // Create a for loop that creates HTML content of all the drinks using Javascript.
+//    // HINT: You will need to use each of the following methods: createElement, innerHTML, appendChild
+//    // ...
+//
+//    for ( i = 0; i < drinkList.length; i++ ) {
+//
+////        var newDrinkDiv = document.createElement("div");
+////
+////        newDrinkDiv.innerHTML = drinkList[i];
+////
+////        newDrinkDiv.setAttribute("class", "chip")
+////
+////        drinkDiv.setAttribute("class", "container")
+////
+////        drinkDiv.appendChild(newDrinkDiv);
+////
+////        console.log(drinkList[i]);
+//
+//        $("#drinkOptions").append("<div id='" + i + "' class='chip waves-effect'>" + drinkList[i] + "</div>");
+//
+//
+//        $( "#" + i ).click(function() {
+//            addToGrandTotal(i);
+//        });
+//
+//    }
+
+
+    // ...
+
+
+</script>
+
+</body>
+</html>
